@@ -32,7 +32,7 @@ function App() {
             <Route path="/">
               <Ticket />
               <Bill cart={cart}/>
-              <Checkout />
+           
             </Route>
           </Switch>
         </div>

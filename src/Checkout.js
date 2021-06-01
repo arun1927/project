@@ -1,28 +1,25 @@
-import React, { PureComponent } from "react";
-import Jspdf, { jsPDF } from "jspdf";
+
+import React from "react";
 import "./Checkout.css";
-import Bill from "./Bill";
-export default class pdfGenerator extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-  jspdfGenerator = () => {
-    var doc = new jsPDF("p", "pt");
-    doc.text(20, 20, "this is default text");
-    doc.save("generated.pdf");
+import { PDFExport, savePDF } from "@progress/kendo-react-pdf";
+
+import { useState } from "react";
+function Checkout(props) {
+  const pdfExportComponent = React.useRef(null);
+  const exportPDFWithComponent = () => {
+    if (pdfExportComponent.current) {
+      pdfExportComponent.current.save();
+    }
   };
-  render() {
-    return (
-      <div className="checkout">
-        <div className="button">
-          <button className="button_save" onClick={this.jspdfGenerator}>
-            {" "}
-            SAVE
-          </button>
-          <button className="button_charge">CHARGE</button>
-        </div>
-      </div>
-    );
-  }
+  return (
+    <div className="checkout">
+      
+
+      <button onClick={() => { exportPDFWithComponent()}}>
+        Export with component
+        </button>
+    </div>
+  );
 }
+
+export default Checkout;
