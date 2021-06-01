@@ -1,0 +1,47 @@
+.bill {
+  background-color: white;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  width: fit-content;
+  height: fit-content;
+  justify-content: space-between;
+}
+.bill_right {
+  font-family: "Courier New", Courier, monospace;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 100%;
+  margin-bottom: 30px;
+  align-items: right;
+  justify-content: flex-start;
+}
+
+.bill_left {
+  display: flex;
+  width: 100%;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+.bill_items {
+  display: flex;
+  justify-content: flex-start;
+  padding-right: 0;
+  padding-top: 30px;
+  font-size: 20px;
+  padding-bottom: 20px;
+}
+
+.bill_amount {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 0;
+  padding-top: 30px;
+  font-size: 20px;
+  padding-bottom: 20px;
+}
