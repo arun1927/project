@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import "./Header.js";
 import Header from "./Header.js";
@@ -11,6 +11,10 @@ import Bill from "./Bill";
 import Sample from "./Sample";
 
 function App() {
+  const [cart,setCart]= useState([])
+  const selectFuntion =(item)=>{
+    setCart([...cart,item])
+  }
   return (
     <Router>
       <div className="app">
@@ -18,7 +22,7 @@ function App() {
           <Switch>
             <Route path="/">
               <Header />
-              <Home />
+              <Home  select={(item)=>{selectFuntion(item)}}/>
               <Bottom />
             </Route>
           </Switch>
@@ -27,7 +31,7 @@ function App() {
           <Switch>
             <Route path="/">
               <Ticket />
-              <Bill />
+              <Bill cart={cart}/>
               <Checkout />
             </Route>
           </Switch>
